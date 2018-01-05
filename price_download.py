@@ -19,7 +19,6 @@ def download_prices(currencies, from_date):
     delta = (datetime.datetime.now() - from_date).days
     delta = delta if delta >= 1 else 1
     base_url = "https://min-api.cryptocompare.com/data/histoday?fsym={curr}&tsym=USD&limit={delta}&aggregate=1"
-    currencies = ['BTC', 'ETH']
     tmp = []
     for currency in currencies:
         r = requests.get(base_url.format(curr=currency, delta=str(delta)))
